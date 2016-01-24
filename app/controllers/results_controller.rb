@@ -16,7 +16,8 @@ class ResultsController < ApplicationController
       csv = File.read(Rails.root + 'lib/question_data.csv')
       questions = CSV.parse(csv, headers: true)
       questionName = question.keys[0]
-      questionIndex = questionName.slice('question').to_i
+      questionIndex = questionName.sub('question','')
+      questionIndex = questionIndex.to_i - 1
       questionValue = questions[questionIndex].select{|k,v| v == question[questionName]}.flatten[0]
       questionValue.slice!('points')
       question[questionName] = questionValue.strip.to_i
