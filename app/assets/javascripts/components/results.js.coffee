@@ -18,7 +18,6 @@
   handleClick: ->
     location.reload()
 
-
   render: ->
     div null,
       h2 className: 'title', 'Results'
