@@ -1,4 +1,18 @@
 class ResultsController < ApplicationController
+
+  def index
+    results = []
+    Result.includes(:user).each do |result|
+      user = result.user
+      resultHash = result.as_json
+      if user
+        resultHash[:name] = user.name
+      end
+      results.push resultHash
+    end
+    render json: results
+  end
+
   def create
     @result = Result.find_or_initialize_by(user_id: result_params['user_id'])
     question = get_question_value(result_params.except(:user_id))

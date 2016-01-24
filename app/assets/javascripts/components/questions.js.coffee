@@ -20,8 +20,15 @@
     result['question' + (@state.questionNumber + 1)] = @state.selectedAnswer
     $.post '/results', {result}, (data) =>
       @setCurrentScore(data)
-      @setState questionNumber: @state.questionNumber + 1
-      @getQuestionData()
+      if @state.questionNumber < 9
+        @setState questionNumber: @state.questionNumber + 1
+        @getQuestionData()
+      else
+        ReactDOM.render(
+          React.createElement(Results),
+          document.getElementById('content')
+        )
+
     , 'JSON'
 
   componentDidMount: ->
@@ -41,7 +48,6 @@
 
 
   getQuestionData: ->
-    self = @
     $.getJSON '/getQuestionData.json'
       .success (data) =>
         @setState question: data[@state.questionNumber]['question']
@@ -51,7 +57,7 @@
     div null,
       div className: 'score-tally', 'Points so far: ' + @state.totalScore
       form className:'form form-multiple-choice', onSubmit: @handleSubmit,
-        div className:'question', @state.question
+        div className:'question', (@state.questionNumber + 1) + ' : ' + @state.question
         div className:'answers',
           for answer, index in @state.answers
             React.createElement RadioButton, {answer, updateSelectedAnswer: @updateSelectedAnswer, checked: @state.selectedAnswer == answer, key: index}
