@@ -1,0 +1,236 @@
+{
+  "questions":
+  [
+    {
+      "id": 1,
+      "question": "How do you manage your books?",
+      "answers":
+      [
+        {
+          "content": "Online accounting software",
+          "value": "15"
+        },
+        {
+          "content": "Desktop accounting software",
+          "value": "10"
+        },
+        {
+          "content": "Spreadsheets (love them formulas!)",
+          "value": "5"
+        },
+        {
+          "content": "Books? You mean like Harry Potter?",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Who manages your business finances?",
+      "answers":
+      [
+        {
+          "content": "An external finance person",
+          "value": "15"
+        },
+        {
+          "content": "Someone in-house",
+          "value": "10"
+        },
+        {
+          "content": "The business owner",
+          "value": "5"
+        },
+        {
+          "content": "Management schmanagement!",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When do you ask for payment?",
+      "answers":
+      [
+        {
+          "content": "Immediately",
+          "value": "15"
+        },
+        {
+          "content": "Within a couple of weeks",
+          "value": "10"
+        },
+        {
+          "content": "Within a month",
+          "value": "5"
+        },
+        {
+          "content": "\"Oh, that reminds me!\"",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What are your credit terms?",
+      "answers":
+      [
+        {
+          "content": "I don’t offer credit",
+          "value": "15"
+        },
+        {
+          "content": "1-30 days",
+          "value": "10"
+        },
+        {
+          "content": "More than 30 days",
+          "value": "5"
+        },
+        {
+          "content": "Hopefully they’ll pay me sometime",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What do you do when payment is overdue?",
+      "answers":
+      [
+        {
+          "content": "Hit the phones every day until I get paid",
+          "value": "15"
+        },
+        {
+          "content": "Send an occasional gentle reminder",
+          "value": "10"
+        },
+        {
+          "content": "Wait and hope for the best",
+          "value": "5"
+        },
+        {
+          "content": "Sign off my emails to them \"regards\" rather than \"kind regards\". That’ll show ‘em.",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What do you do if someone consistently pays late?",
+      "answers":
+      [
+        {
+          "content": "Charge them more",
+          "value": "15"
+        },
+        {
+          "content": "Re-negotiate payment terms",
+          "value": "10"
+        },
+        {
+          "content": "End our relationship with them",
+          "value": "5"
+        },
+        {
+          "content": "Grumble under my breath and hope they’ll change their ways",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "How do you receive payment?",
+      "answers":
+      [
+        {
+          "content": "Cash, credit card or bank transfer",
+          "value": "15"
+        },
+        {
+          "content": "Cash only",
+          "value": "10"
+        },
+        {
+          "content": "Cheque",
+          "value": "5"
+        },
+        {
+          "content": "Camels",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "How do you record your expenses?",
+      "answers":
+      [
+        {
+          "content": "with an app (like ReceiptBank or Expensify)",
+          "value": "15"
+        },
+        {
+          "content": "in a spreadsheet",
+          "value": "10"
+        },
+        {
+          "content": "in a ledger",
+          "value": "5"
+        },
+        {
+          "content": "by putting all my receipts in a shoebox",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What do you do with the profits?",
+      "answers":
+      [
+        {
+          "content": "Set aside a portion of every paid invoice",
+          "value": "15"
+        },
+        {
+          "content": "Reinvest every penny we receive back into the business",
+          "value": "10"
+        },
+        {
+          "content": "Save some cash, but only from the bigger invoices",
+          "value": "5"
+        },
+        {
+          "content": "Buy something cool",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "How do you forecast your cashflow?",
+      "answers":
+      [
+        {
+          "content": "We use a cash flow forecasting tool (like Float!)",
+          "value": "15"
+        },
+        {
+          "content": "Our accountant does it",
+          "value": "10"
+        },
+        {
+          "content": "Manually using spreadsheets",
+          "value": "5"
+        },
+        {
+          "content": "What is this “forecast” of which you speak?",
+          "value": "0"
+        }
+      ]
+    }
+  ]
+}
+
