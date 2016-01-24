@@ -1,4 +1,4 @@
-{form, div, label, input, button} = React.DOM
+{form, div, button} = React.DOM
 
 @Questions = React.createClass
 
@@ -8,10 +8,7 @@
     userId: @props.user.id,
     questionNumber: 0,
     question: '',
-    firstAnswer: '',
-    secondAnswer: '',
-    thirdAnswer: '',
-    fourthAnswer: '',
+    answers: '',
     selectedAnswer: '',
     totalScore: 0
 
@@ -33,8 +30,8 @@
   valid: ->
     @state.selectedAnswer.length > 0
 
-  handleChange: (e) ->
-    @setState selectedAnswer: e.target.labels[0].innerHTML
+  updateSelectedAnswer: (answer) ->
+    @setState selectedAnswer: answer
 
   setCurrentScore: (data) ->
     totalScore = 0
@@ -47,11 +44,8 @@
     self = @
     $.getJSON '/getQuestionData.json'
       .success (data) =>
-        @setState question: data[@state.questionNumber]['Question']
-        @setState firstAnswer: data[@state.questionNumber]['15 points']
-        @setState secondAnswer: data[@state.questionNumber]['10 points']
-        @setState thirdAnswer: data[@state.questionNumber]['5 points']
-        @setState fourthAnswer: data[@state.questionNumber]['0 points']
+        @setState question: data[@state.questionNumber]['question']
+        @setState answers: data[@state.questionNumber]['answers']
 
   render: ->
     div null,
@@ -59,12 +53,6 @@
       form className:'form form-multiple-choice', onSubmit: @handleSubmit,
         div className:'question', @state.question
         div className:'answers',
-          input className:'answer', type:'radio', id: 'radio-button-1', onChange: @handleChange
-          label className:'answer', htmlFor:'radio-button-1', @state.firstAnswer
-          input className:'answer', type:'radio', id: 'radio-button-2', onChange: @handleChange
-          label className:'answer', htmlFor:'radio-button-2', @state.secondAnswer
-          input className:'answer', type:'radio', id: 'radio-button-3', onChange: @handleChange
-          label className:'answer', htmlFor:'radio-button-3', @state.thirdAnswer
-          input className:'answer', type:'radio', id: 'radio-button-4', onChange: @handleChange
-          label className:'answer', htmlFor:'radio-button-4', @state.fourthAnswer
+          for answer, index in @state.answers
+            React.createElement RadioButton, {answer, updateSelectedAnswer: @updateSelectedAnswer, checked: @state.selectedAnswer == answer, key: index}
         button className:'btn btn-primary', type: 'submit', disabled: !@valid(), 'Next'
