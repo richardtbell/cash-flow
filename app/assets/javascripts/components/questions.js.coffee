@@ -5,7 +5,7 @@
   displayName: 'Question'
 
   getInitialState: ->
-    user: @props.user.id,
+    userId: @props.user.id,
     questionNumber: 0,
     question: '',
     firstAnswer: '',
@@ -16,8 +16,14 @@
 
   handleSubmit: (e) ->
     e.preventDefault()
-    @setState questionNumber: @state.questionNumber + 1
-    @getQuestionData()
+    result = {
+      user_id: @state.userId
+    }
+    result['question' + (@state.questionNumber + 1)] = @state.selectedAnswer
+    $.post '/results', {result}, (data) =>
+      @setState questionNumber: @state.questionNumber + 1
+      @getQuestionData()
+    , 'JSON'
 
   componentDidMount: ->
     @getQuestionData()

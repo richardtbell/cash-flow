@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160120214249) do
+ActiveRecord::Schema.define(version: 20160124150244) do
+
+  create_table "results", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "question1"
+    t.integer  "question2"
+    t.integer  "question3"
+    t.integer  "question4"
+    t.integer  "question5"
+    t.integer  "question6"
+    t.integer  "question7"
+    t.integer  "question8"
+    t.integer  "question9"
+    t.integer  "question10"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "results", ["user_id"], name: "index_results_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
