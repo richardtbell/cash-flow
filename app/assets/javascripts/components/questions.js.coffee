@@ -35,7 +35,7 @@
     @getQuestionData()
 
   valid: ->
-    @state.selectedAnswer.length > 0
+    @state.selectedAnswer.length > 0 && @state.answers.indexOf(@state.selectedAnswer) > 0
 
   updateSelectedAnswer: (answer) ->
     @setState selectedAnswer: answer
@@ -54,7 +54,7 @@
         @setState answers: data[@state.questionNumber]['answers']
 
   render: ->
-    div null,
+    div className: 'question-page',
       div className: 'score-tally', 'Points so far: ' + @state.totalScore
       form className:'form form-multiple-choice', onSubmit: @handleSubmit,
         div className:'question', (@state.questionNumber + 1) + ' : ' + @state.question

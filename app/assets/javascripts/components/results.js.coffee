@@ -19,7 +19,7 @@
     location.reload()
 
   render: ->
-    div null,
+    div className: 'results-page',
       h2 className: 'title', 'Results'
         table null,
           thead null,

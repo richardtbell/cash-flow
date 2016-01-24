@@ -1,4 +1,4 @@
-{label, input} = React.DOM
+{div, label, input} = React.DOM
 
 @RadioButton = React.createClass
 
@@ -7,6 +7,11 @@
   handleChange: (e) ->
     @props.updateSelectedAnswer(@props.answer)
 
+  getClasses: ->
+    if @props.checked
+      return 'checked'
+
   render: ->
-    label className:'answer', @props.answer,
-      input className:'answer', type:'radio', onChange: @handleChange, checked: @props.checked
+    div className: 'answer',
+      label className:@getClasses() , @props.answer,
+        input type:'radio', onChange: @handleChange, checked: @props.checked

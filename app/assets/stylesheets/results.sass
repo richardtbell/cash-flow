@@ -1,0 +1,19 @@
+@import 'variables'
+
+.results-page
+  table
+    width: 100%
+    border-spacing: 0
+    border: 1px solid $very-light-grey
+    thead
+      background-color: $very-light-grey
+      color: $dark-grey
+    th, td
+      text-align: left
+      padding: 7px
+      border-left: 1px solid $very-light-grey
+      &:first-child
+        border: none
+    tbody
+      tr:nth-child(odd)
+        background: $lightest-grey

@@ -1,0 +1,40 @@
+@import 'variables'
+
+#content
+  margin: 50px 10%
+  font-family: $font-stack
+  color: $text-color
+h2
+  font-size: 30px
+  color: $grey
+.btn
+  display: block
+  padding: 10px 15px
+  margin: 5px auto
+  margin-top: 50px
+  font-size: 18px
+  font-weight: bold
+  text-shadow: none
+  border: none
+  cursor: pointer
+  transition: background-color 0.5s
+  border-radius: 3px
+.btn-primary
+  color: $white
+  background-color: $blue
+  &:hover
+    background-color: $darker-blue
+.btn:disabled
+  background-color: $light-grey
+input
+  height: 42px
+  background-color: $white
+  font-weight: 400
+  color: $dark-grey
+  border: 1px solid $light-grey
+  font-size: 18px
+  line-height: 20px
+  padding: 10px 0px 5px 14px
+  width: 100%
+form
+  margin-left: 30px

@@ -1,4 +1,4 @@
-{form, div, input, button} = React.DOM
+{form, div, label, input, button} = React.DOM
 
 @UserForm = React.createClass
 
@@ -24,7 +24,8 @@
     , 'JSON'
 
   render: ->
-    form className: 'form form--user', onSubmit: @handleSubmit,
+    form className: 'form form-user', onSubmit: @handleSubmit,
       div className: 'form-group',
-        input className: 'form--user__name', type: 'text', placeholder: 'Name', name: 'name', value: @state.name, onChange: @handleChange
+        label className: 'form-label', 'What is your name?',
+          input className: 'form-input', type: 'text', placeholder: 'Name', name: 'name', value: @state.name, onChange: @handleChange
       button className: 'btn btn-primary', type: 'submit', disabled: !@valid(), 'Start'
