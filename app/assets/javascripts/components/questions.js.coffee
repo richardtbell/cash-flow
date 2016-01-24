@@ -35,7 +35,8 @@
     @getQuestionData()
 
   valid: ->
-    @state.selectedAnswer.length > 0 && @state.answers.indexOf(@state.selectedAnswer) > 0
+    @state.answers.indexOf(@state.selectedAnswer)
+    @state.selectedAnswer.length > 0 && @state.answers.indexOf(@state.selectedAnswer) >= 0
 
   updateSelectedAnswer: (answer) ->
     @setState selectedAnswer: answer
